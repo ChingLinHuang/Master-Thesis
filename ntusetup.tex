@@ -1,0 +1,52 @@
+% !TeX root = ./main.tex
+
+% --------------------------------------------------
+% 資訊設定（Information Configs）
+% --------------------------------------------------
+
+\ntusetup{
+  university*   = {National Taiwan University},
+  university    = {國立臺灣大學},
+  college       = {生命科學院},
+  college*      = {College of Life Science},
+  institute     = {生態學與演化生物學研究所},
+  institute*    = {Institute of Ecology and Evolutionary Biology},
+  title         = {整合不同分析方法來量化關聯群落背後的生態機制},
+  title*        = {Disentangling ecological processes underlying the metacommunity by integrating several analytical methods},
+  author        = {黃敬麟},
+  author*       = {Ching-Lin Huang},
+  ID            = {R09b44010},
+  advisor       = {澤大衛},
+  advisor*      = {David Zelený,},	   % note "," after names
+  date          = {2023-1-16},         % 若註解掉，則預設為當天
+  oral-date     = {2023-1-16},         % 若註解掉，則預設為當天
+  DOI           = {10.6342/NTU202300163},
+  keywords      = {群落組成, 觀察資料, 福山森林動態樣區, 機制群落模型, 隨機森林, 模擬},
+  keywords*     = {community assembly, empirical data, Fushan Forest Dynamics Plot, process-based model, random forest, simulation},
+}
+
+% --------------------------------------------------
+% 加載套件（Include Packages）
+% --------------------------------------------------
+
+\usepackage{natbib}     				% 參考文獻
+\usepackage{hyperref} 					% hyperlink for sections
+\usepackage{amsmath, amsthm, amssymb}   % 數學環境
+%\usepackage{ulem, CJKulem}             % 下劃線、雙下劃線與波浪紋效果
+\usepackage{booktabs}                   % 改善表格設置
+\usepackage{multirow}                   % 合併儲存格
+\usepackage{diagbox}                    % 插入表格反斜線
+\usepackage{array}                      % 調整表格高度
+\usepackage{longtable}                  % 支援跨頁長表格
+\usepackage{paralist}                   % 列表環境
+\usepackage{afterpage}					% continue longtable
+\usepackage{xurl}						% auto-change line for url
+\usepackage{pdfpages}					% insert pdf
+
+% set of chapters
+
+% --------------------------------------------------
+% 套件設定（Packages Settings）
+% --------------------------------------------------
+\counterwithout{figure}{chapter} 		% continuous label for figures
+\counterwithout{table}{chapter} 		% continuous lael for tables

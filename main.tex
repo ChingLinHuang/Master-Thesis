@@ -1,0 +1,71 @@
+% !TEX TS-program = xelatex
+% !BIB program = bibtex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[
+  oneside,				% use oneside to prevent empty page with numbering
+  openright,
+  degree    = master,               % degree = master | doctor
+  language  = english,              % language = chinese | english
+  fontset   = template,             % fontset = default | template | system | overleaf
+  watermark = false,                 % watermark = true | false
+  doi       = false,                 % doi = true | false
+]{ntuthesis}
+
+% 注意封面不會產生浮水印(即使watermark = true)！但會有DOI。依學校規定，封面需要有浮水印，建議先生成無浮水印的檔案，在使用pdf編輯軟體加入浮水印。
+
+
+\input{ntusetup}
+
+\begin{document}
+
+% 封面與口試審定
+% Cover and Verification Letter
+\makecover                          % 論文封面（Cover）
+
+\pagenumbering{roman}			    % numbering in roman before main text
+%\makeverification                 % 口試委員審定書（Verification Letter）
+% Insert pdf file of signed verification letter
+\includepdf[pages=-, pagecommand={\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{Verification Letter from the Oral Examination Committee}}]{front/Verification_Letter.pdf}
+
+
+
+% 致謝與論文摘要
+% Acknowledgement and Abstract
+\input{front/acknowledgement}       % 致謝（Acknowledgement）
+\input{front/abstract}              % 摘要（Abstract）
+
+% 生成目錄與符號列表
+% Contents of Tables and Denotation
+\maketableofcontents                % 目錄（Table of Contents）
+\makelistoffigures                  % 圖目錄（List of Figures）
+\makelistoftables                   % 表目錄（List of Tables）
+
+
+% 論文內容
+% Contents of Thesis
+\mainmatter
+\input{contents/Introduction_Final}
+\setcounter{section}{0}  % restart numerating sections
+\input{contents/Materials and methods_Final}
+\setcounter{section}{0}  
+\input{contents/Results and discussions_Final}
+
+% 參考文獻
+% References
+\refmatter
+%\bibliographystyle{ecollet}
+%\bibliography{citation} % check .bbl file and copy to ref.tex
+\input{back/ref}
+
+
+% 附錄
+% Appendices
+\renewcommand\thefigure{S\arabic{figure}}  % add "S" before the numbering
+\renewcommand\thetable{S\arabic{table}}  
+\setcounter{figure}{0}   				   % restart the numbering
+\setcounter{table}{0}  
+\input{back/appendix01}					   % Appendix
+
+\end{document}
